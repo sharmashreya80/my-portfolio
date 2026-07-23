@@ -893,10 +893,8 @@ nav ul li a:hover::after{
   border-color: #38bdf8;
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
-
-
-.send-btn {
-   padding: 14px 28px;
+.contact-form button {
+  padding: 14px 28px;
   border-radius: 30px;
   background: #38bdf8;
   color: #0f172a;
@@ -908,11 +906,13 @@ nav ul li a:hover::after{
   margin-top: 5px;
 }
 
-.send-btn:hover {
- background: #0284c7;
+.contact-form button:hover {
+  background: #0284c7;
   color: #ffffff;
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
 }
+
+
 /* --- MOBILE RESPONSIVE & FUNCTIONALITY FIX --- */
 @media screen and (max-width: 768px) {
 
