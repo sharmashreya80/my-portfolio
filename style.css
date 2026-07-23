@@ -873,45 +873,68 @@ nav ul li a:hover::after{
 /* --- MOBILE RESPONSIVE & FUNCTIONALITY FIX --- */
 @media screen and (max-width: 768px) {
 
-  /* 1. Page ko horizontally shrink aur zoom hone se rokna */
+  /* 1. Page ko horizontally shrink aur overflow se rokna */
   html, body {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 100vw !important;
     overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 2. Navbar & Links Slide/Click Fix */
+  /* 2. Navbar Container Fix */
   nav {
     position: relative !important;
-    z-index: 9999 !important; /* Ensure navigation click works on top */
-    flex-direction: column !important;
-    padding: 15px 10px !important;
-    gap: 15px !important;
-  }
-
-  nav ul {
+    z-index: 9999 !important;
     display: flex !important;
-    flex-wrap: wrap !important; /* Mobile par links auto-wrap hokar neatly adjust honge */
-    justify-content: center !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 15px 10px !important;
     gap: 12px !important;
   }
 
-  nav ul li a {
-    font-size: 0.95rem !important;
-    padding: 5px 8px !important;
+  /* 3. Horizontal Scrollable Nav Links (Slide Fix) */
+  nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 10px !important;
+    margin: 0 !important;
+    gap: 15px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
-  /* 3. Main Sections & Form Container Fit */
+  /* Items ko pichakne (shrink hone) se rokne ke liye */
+  nav ul li {
+    display: inline-block !important;
+    flex-shrink: 0 !important; /* Extremely important for scrolling */
+  }
+
+  nav ul li a {
+    display: inline-block !important;
+    font-size: 0.95rem !important;
+    padding: 6px 12px !important;
+    text-decoration: none !important;
+  }
+
+  /* Scrollbar Hide (Clean View ke liye) */
+  nav ul::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 4. Main Sections Spacing Fit */
   section, .hero, .about, .projects, .contact {
     width: 100% !important;
     box-sizing: border-box !important;
-    padding: 100px 20px 40px 20px !important;
+    padding: 90px 20px 40px 20px !important;
     text-align: center !important;
   }
 
-  /* 4. Contact Form & Send Message Button Fix */
+  /* 5. Contact Form & Button Fix */
   form, .contact-form, .contact-container {
     width: 100% !important;
     max-width: 100% !important;
@@ -928,7 +951,6 @@ nav ul li a:hover::after{
     margin-bottom: 15px !important;
   }
 
-  /* Send Message Button Ko Visible Aur Clickable Banane Ke Liye */
   form button, .contact-form button, input[type="submit"] {
     display: block !important;
     width: 100% !important;
@@ -938,6 +960,7 @@ nav ul li a:hover::after{
     margin: 15px auto !important;
     padding: 12px 20px !important;
     z-index: 10 !important;
+    cursor: pointer !important;
   }
-}
 
+} /* End of @media query */
