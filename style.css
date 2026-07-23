@@ -962,20 +962,101 @@ nav ul li a:hover::after{
     z-index: 10 !important;
     cursor: pointer !important;
   }
-   /* Mobile par Text aur Image ko vertically ek ke niche ek align karne ke liye */
-  .hero {
-    flex-direction: column !important; /* Horizontally break hone se rokega */
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding-top: 100px !important;
+/* ==================== MASTER MOBILE RESPONSIVE FIX ==================== */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Universal Screen Layout Fix */
+  html, body {
     width: 100% !important;
-    overflow: hidden !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .hero-text, .hero-image {
+  /* 2. Top Navigation Bar (Slideable Tabs) */
+  nav {
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 10px !important;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    padding: 5px 0 !important;
+    gap: 15px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav ul li {
+    flex-shrink: 0 !important;
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 3. Hero & About Section Mobile Alignment */
+  .hero, .about, .contact-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 90px 20px 30px 20px !important;
+  }
+
+  .hero-text, .hero-image, .about-text, .about-image {
     width: 100% !important;
     max-width: 100% !important;
   }
 
-} /* End of @media query */
+  .hero-image img, .about-image img {
+    width: 220px !important;
+    height: 220px !important;
+    margin: 20px auto !important;
+    object-fit: cover;
+  }
+
+  /* 4. Single Form & Send Message Styling */
+  .contact-form-container {
+    width: 100% !important;
+    max-width: 400px !important;
+    margin-top: 25px !important;
+  }
+
+  .contact-form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    border: 1px solid #38bdf8 !important;
+    background: #0f172a !important;
+    color: #fff !important;
+  }
+
+  .contact-form button {
+    width: 100% !important;
+    padding: 12px !important;
+    border-radius: 25px !important;
+    background: #38bdf8 !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+}
