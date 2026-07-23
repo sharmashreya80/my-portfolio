@@ -342,81 +342,50 @@ interfaces using HTML, CSS, JavaScript and Bootstrap.<br>
 <!-- ================= CONTACT ================= -->
 
 <!-- ================= DUAL-ACTION CONTACT PORTAL ================= -->
+<!-- ==================== CONTACT SECTION ==================== -->
 <section id="contact" class="contact">
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="section-subtitle">Have an open role or want to collaborate on a project? Drop a message!</p>
 
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="section-subtitle" style="text-align:center; color:#cbd5e1; margin-top:-40px; margin-bottom:50px;">
-        Have an open data analyst role or want to collaborate on a project? Drop a message!
-    </p>
-
-    <div class="contact-container">
-        
-        <!-- Left Side: Interactive Profile Cards -->
-        <div class="contact-info">
-            
-            <a href="mailto:shreya8088sharma@gmail.com" class="info-card">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <h3>Email Me</h3>
-                    <p>shreya8088sharma@gmail.com</p>
-                </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/shreya-sharma-48283126a" target="_blank" class="info-card">
-                <i class="fab fa-linkedin"></i>
-                <div>
-                    <h3>LinkedIn</h3>
-                    <p>shreya-sharma-48283126a</p>
-                </div>
-            </a>
-            <!-- Right Side: Contact Form -->
-        <div class="contact-form-container" style="width: 100%; max-width: 500px; margin: 20px auto 0 auto;">
-          <form style="display: flex; flex-direction: column; gap: 15px;">
-            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #38bdf8; background: #0f172a; color: white; box-sizing: border-box;">
-            <input type="email" placeholder="Your Email" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #38bdf8; background: #0f172a; color: white; box-sizing: border-box;">
-            <textarea rows="4" placeholder="Your Message" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #38bdf8; background: #0f172a; color: white; box-sizing: border-box;"></textarea>
-            <button type="submit" style="padding: 12px 25px; border-radius: 25px; background: #38bdf8; color: #000; font-weight: bold; border: none; cursor: pointer;">Send Message</button>
-          </form>
+  <div class="contact-container">
+    <!-- Left Side: Direct Contact Cards -->
+    <div class="contact-info">
+      <a href="mailto:shreya8088sharma@gmail.com" class="info-card">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h3>Email Me</h3>
+          <p>shreya8088sharma@gmail.com</p>
         </div>
+      </a>
 
-            <div class="info-card no-link">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                    <h3>Location</h3>
-                    <p>Lucknow, Uttar Pradesh, India</p>
-                </div>
-            </div>
-
+      <a href="https://www.linkedin.com/in/shreya-sharma-48283126a" target="_blank" class="info-card">
+        <i class="fab fa-linkedin"></i>
+        <div>
+          <h3>LinkedIn</h3>
+          <p>shreya-sharma-48283126a</p>
         </div>
+      </a>
 
-        <!-- Right Side: Clean Contact Form -->
-        <div class="contact-form-container">
-            <!-- 1. Change the action URL to Web3Forms -->
-<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-    
-    <!-- 2. ADD THIS LINE RIGHT HERE (Get a free key instantly at web3forms.com) -->
-    <input type="hidden" name="access_key" value="0ddae9fc-0101-4551-8f50-4f58a0a4bfc6">
-
-    <div class="form-group">
-        <input type="text" name="name" required placeholder="Your Name">
-    </div>
-    <div class="form-group">
-        <input type="email" name="email" required placeholder="Your Email">
-    </div>
-    <div class="form-group">
-        <textarea name="message" rows="5" required placeholder="Your Message..."></textarea>
-    </div>
-    
-    <button type="submit" class="send-btn">
-        Send Message <i class="fas fa-paper-plane"></i>
-    </button>
-</form>
+      <div class="info-card">
+        <i class="fas fa-location-dot"></i>
+        <div>
+          <h3>Location</h3>
+          <p>Lucknow, Uttar Pradesh, India</p>
         </div>
-
+      </div>
     </div>
 
+    <!-- Right Side: Single Send Message Form -->
+    <div class="contact-form-container">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
 </section>
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
