@@ -427,16 +427,23 @@ nav ul li a:hover::after {
   box-sizing: border-box;
 }
 
-.stage-details h3 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  color: #38bdf8;
+/* Explore Codebase Link Color Fix */
+.stage-details a, 
+.view-btn {
+  color: #38bdf8 !important; /* Bright Sky Blue */
+  text-decoration: none !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
 }
 
-.stage-details p {
-  color: #cbd5e1;
-  line-height: 1.6;
-  font-size: 15px;
+/* Hover effect */
+.stage-details a:hover, 
+.view-btn:hover {
+  color: #ffffff !important; /* Mouse le jaane par White glow karega */
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
 }
 
 .metrics-grid {
