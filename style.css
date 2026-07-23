@@ -427,22 +427,25 @@ nav ul li a:hover::after {
   box-sizing: border-box;
 }
 
-/* Explore Codebase Link Color Fix */
-.stage-details a, 
-.view-btn {
+/* Explore Codebase Link Explicit Color Rules */
+.project-stage a,
+.project-stage a:link,
+.project-stage a:visited,
+.stage-details a,
+.stage-details a:link,
+.stage-details a:visited {
   color: #38bdf8 !important; /* Bright Sky Blue */
   text-decoration: none !important;
-  font-weight: 600;
+  font-weight: 600 !important;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   transition: 0.3s ease;
 }
 
-/* Hover effect */
-.stage-details a:hover, 
-.view-btn:hover {
-  color: #ffffff !important; /* Mouse le jaane par White glow karega */
+.project-stage a:hover,
+.stage-details a:hover {
+  color: #ffffff !important; /* Hover karne par White */
   text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
 }
 
