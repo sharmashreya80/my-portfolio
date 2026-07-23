@@ -53,18 +53,25 @@ function switchProject(key) {
     // 1. Update active styling in controls
     const cards = document.querySelectorAll('.control-card');
     cards.forEach(card => card.classList.remove('active'));
-    document.getElementById('stage-link').href = target.link;
+    
     // Find clicked card dynamically using the execution path
     event.currentTarget.classList.add('active');
 
     // 2. Animate and swap stage contents smoothly
     const target = projectData[key];
     
+    const linkElement = document.getElementById('stage-link');
+
     document.getElementById('stage-title').innerText = target.title;
     document.getElementById('stage-desc').innerText = target.desc;
     document.getElementById('meta-scope').innerText = target.scope;
     document.getElementById('meta-impact').innerText = target.impact;
-    document.getElementById('stage-link').href = target.link;
+    
+    // Link URL and Font Color Update Fix
+    linkElement.href = target.link;
+    linkElement.style.color = '#38bdf8'; // Isse font color hamesha bright cyan rahega
+    linkElement.style.fontWeight = '600';
+    
     document.getElementById('stage-img').src = target.img;
 }
 const form = document.querySelector('.contact-form');
