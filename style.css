@@ -55,18 +55,19 @@ body::after{
    NAVBAR
 ========================= */
 
-nav{
-    position:relative;
-    top:0;
-    left:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 80px;
-    background:rgba(15,23,42,.75);
-    backdrop-filter:blur(12px);
-    z-index:1000;
+nav {
+  position: fixed !important; /* Page scroll karne par navbar gaayab nahi hoga */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;
+  background: rgba(15, 23, 42, 0.9) !important; /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Blur effect under navbar */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 .logo{
@@ -265,12 +266,20 @@ nav ul li a:hover::after{
 /* =========================
    ABOUT
 ========================= */
-
 .about {
+  padding: 130px 80px 80px 80px; /* Top padding space so fixed navbar doesn't cover heading */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 80px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .about .section-title {
@@ -280,14 +289,7 @@ nav ul li a:hover::after{
     margin-bottom: 40px;
     text-align: center;
 }
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  width: 100%;
-  max-width: 1200px;
-}
+
 
 
 .about-image {
@@ -302,7 +304,7 @@ nav ul li a:hover::after{
   border-radius: 20px;
   object-fit: cover;
   border: 4px solid #38bdf8;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
 }
 
 .about-image img:hover {
@@ -331,25 +333,32 @@ nav ul li a:hover::after{
 }
 /* Stats Row Display Fix */
 .about-stats {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Cards in one straight row */
   gap: 20px;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .stat-card {
   background: #1e293b;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  padding: 15px 25px;
-  border-radius: 12px;
-  min-width: 110px;
+  border: 2px solid #38bdf8; /* Blue accent border */
+  padding: 18px;
+  border-radius: 14px;
   text-align: center;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25); /* Neon Blue Glow */
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+  border-color: #60a5fa;
 }
 
 .stat-card h3 {
   color: #38bdf8;
-  font-size: 24px;
-  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .stat-card p {
@@ -787,7 +796,7 @@ nav ul li a:hover::after{
 .contact-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 50px;
   width: 100%;
   max-width: 1100px;
@@ -807,11 +816,12 @@ nav ul li a:hover::after{
   align-items: center;
   gap: 15px;
   background: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 22px;
+  border-radius: 14px;
   border: 1px solid rgba(56, 189, 248, 0.2);
   text-decoration: none;
   color: #fff;
+   transition: 0.3s;
 }
 
 .info-card.no-link {
@@ -843,71 +853,65 @@ nav ul li a:hover::after{
 }
 
 /* Hover effects for clickable cards */
-.info-card:not(.no-link):hover {
-    transform: translateX(8px);
-    border-color: #38bdf8;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-}
 
-.info-card:not(.no-link):hover i {
-    background: #38bdf8;
-    color: #0f172a;
-    box-shadow: 0 0 15px #38bdf8;
+.info-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
 /* Contact Form Side */
 .contact-form-container {
-  flex: 1;
+  flex: 1.2;
   background: #1e293b;
-  padding: 30px;
+  padding: 35px;
   border-radius: 16px;
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   box-sizing: border-box;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: #0f172a; /* Solid dark theme background */
-  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid #334155;
+  background: #0f172a !important; /* Pure Dark Fill */
+  color: #ffffff !important;
   font-size: 15px;
   outline: none;
+  transition: 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
+
 .send-btn {
-    background: #38bdf8;
-    color: #0f172a;
-    padding: 15px;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+   padding: 14px 28px;
+  border-radius: 30px;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
 }
 
 .send-btn:hover {
-    background: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+ background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
 }
 /* --- MOBILE RESPONSIVE & FUNCTIONALITY FIX --- */
 @media screen and (max-width: 768px) {
