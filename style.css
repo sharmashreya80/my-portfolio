@@ -324,7 +324,6 @@ nav ul li a:hover::after {
   margin-bottom: 35px;
 }
 
-/* Stats Row Display (Desktop: 4 Columns) */
 .about-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -361,8 +360,118 @@ nav ul li a:hover::after {
   margin: 0;
 }
 
+/* =========================================
+   INNOVATIVE PROJECTS SHOWCASE (DESKTOP)
+========================================= */
+
+.showcase-container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.project-controls {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+
+.control-card {
+  background: #172554;
+  padding: 20px 25px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.control-card:hover, .control-card.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+  background: #1e293b;
+}
+
+.control-card h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.tech-tag {
+  font-size: 12px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.project-stage {
+  flex: 1.6 !important;
+  background: #172554;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.stage-details h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.stage-details p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.metrics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.metric-pill {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  color: #cbd5e1;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.preview-viewport {
+  width: 100%;
+  height: 280px;
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.preview-viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* =========================
-   SKILLS & EXPERIENCE & SHOWCASE
+   SKILLS & EXPERIENCE
 ========================= */
 
 .skills {
@@ -641,7 +750,7 @@ nav ul li a:hover::after {
     display: none !important;
   }
 
-  /* 3. Hero & Main Section Layout */
+  /* 3. Main Sections Layout */
   section, .hero, .about, .skills, .experience, .contact {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -687,7 +796,7 @@ nav ul li a:hover::after {
 
   .about-stats {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Grid */
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -710,7 +819,19 @@ nav ul li a:hover::after {
     word-break: break-word !important;
   }
 
-  /* 5. Contact Section Mobile Fit */
+  /* 5. Mobile Project Showcase Fix */
+  .showcase-container {
+    flex-direction: column !important;
+    gap: 25px !important;
+    padding: 0 !important;
+  }
+
+  .project-controls, .project-stage {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  /* 6. Contact Section Mobile Fit */
   .contact-container {
     flex-direction: column !important;
     gap: 25px !important;
