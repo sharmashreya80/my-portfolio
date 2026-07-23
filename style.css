@@ -870,57 +870,74 @@ nav ul li a:hover::after{
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
 }
-
-/* Mobile Responsiveness */
-/* --- MOBILE RESPONSIVE FIX (Phone ke liye) --- */
+/* --- MOBILE RESPONSIVE & FUNCTIONALITY FIX --- */
 @media screen and (max-width: 768px) {
-  /* Body aur main containers ka overflow rokne ke liye */
-  body, html {
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+
+  /* 1. Page ko horizontally shrink aur zoom hone se rokna */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 
-  /* Saare sections ko mobile par ek ke niche ek (column) lane ke liye */
-  section, .hero, .about, .projects {
-    flex-direction: column-reverse !important;
+  /* 2. Navbar & Links Slide/Click Fix */
+  nav {
+    position: relative !important;
+    z-index: 9999 !important; /* Ensure navigation click works on top */
+    flex-direction: column !important;
+    padding: 15px 10px !important;
+    gap: 15px !important;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Mobile par links auto-wrap hokar neatly adjust honge */
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 12px !important;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem !important;
+    padding: 5px 8px !important;
+  }
+
+  /* 3. Main Sections & Form Container Fit */
+  section, .hero, .about, .projects, .contact {
     width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     padding: 100px 20px 40px 20px !important;
     text-align: center !important;
-    min-height: auto !important;
   }
 
-  /* Navbar ko phone par thik se set karne ke liye */
-  nav {
-    flex-direction: column !important;
-    gap: 12px;
-    padding: 15px !important;
-  }
-
-  /* Badi images aur profile circle ko phone screen ke mutabiq chota karne ke liye */
-  img {
+  /* 4. Contact Form & Send Message Button Fix */
+  form, .contact-form, .contact-container {
+    width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
   }
 
-  .hero-image img, .about-image img {
-    width: 200px !important;
-    height: 200px !important;
-    margin: 0 auto !important;
+  form input, form textarea, .contact-form input, .contact-form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 15px !important;
   }
 
-  /* Headings aur text size ko phone par fit karne ke liye */
-  h1 {
-    font-size: 1.8rem !important;
-  }
-  
-  h2 {
-    font-size: 1.4rem !important;
-  }
-  
-  p {
-    font-size: 0.95rem !important;
+  /* Send Message Button Ko Visible Aur Clickable Banane Ke Liye */
+  form button, .contact-form button, input[type="submit"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 15px auto !important;
+    padding: 12px 20px !important;
+    z-index: 10 !important;
   }
 }
+
