@@ -266,59 +266,69 @@ nav ul li a:hover::after{
    ABOUT
 ========================= */
 
-.about{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:80px;
-    padding:120px 80px;
+.about {
+    display: flex;
+    flex-direction: column; /* Isse "About Me" Title Top Par Aayega */
+    align-items: center;
+    justify-content: center;
+    padding: 120px 80px;
 }
 
-.about-image{
-    flex:1;
-    display:flex;
-    justify-content:center;
+.about .section-title {
+    color: #38bdf8;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.about-image img{
-    width:350px;
-    height:350px;
-    object-fit:cover;
-    border-radius:20px;
-    border:5px solid #38bdf8;
-    box-shadow:0 0 35px rgba(56,189,248,.5);
-    transition:.4s;
+.about-container {
+    display: flex; /* Image aur Text ko laptop par side-by-side rakhne ke liye */
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
 }
 
-.about-image img:hover{
-    transform:scale(1.05);
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.about-content{
-    flex:2;
+.about-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid #38bdf8;
+    box-shadow: 0 0 35px rgba(56, 189, 248, .5);
+    transition: .4s;
 }
 
-.about-content h4{
-    color:#38bdf8;
-    font-size:22px;
-    margin-bottom:10px;
+.about-image img:hover {
+    transform: scale(1.05);
 }
 
-.about-content h2{
-    font-size:48px;
-    margin-bottom:10px;
+.about-content {
+    flex: 2;
 }
 
-.about-content h3{
-    color:#38bdf8;
-    margin-bottom:20px;
+.about-content h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.about-content p{
-    color:#cbd5e1;
-    line-height:1.9;
-    font-size:18px;
-    margin-bottom:35px;
+.about-content h3 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #cbd5e1;
+    line-height: 1.9;
+    font-size: 18px;
+    margin-bottom: 35px;
 }
 
 /* =========================
@@ -1012,7 +1022,14 @@ nav ul li a:hover::after{
     padding: 90px 20px 30px 20px !important;
   }
 
-  .hero-text, .hero-image, .about-text, .about-image {
+  /* Added for About Container Fix on Mobile */
+  .about-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .hero-text, .hero-image, .about-text, .about-content, .about-image {
     width: 100% !important;
     max-width: 100% !important;
   }
@@ -1020,7 +1037,7 @@ nav ul li a:hover::after{
   .hero-image img, .about-image img {
     width: 220px !important;
     height: 220px !important;
-    margin: 20px auto !important;
+    margin: 10px auto !important;
     object-fit: cover;
   }
 
