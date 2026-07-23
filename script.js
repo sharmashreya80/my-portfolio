@@ -14,14 +14,7 @@ var typed = new Typed('#element', {
 });
 // Data store holding your exact structural achievements
 const projectData = {
-    blinkit: {
-        title: "Blinkit Business Sales Analysis",
-        desc: "Cleaned and analyzed 8,523+ records using MySQL queries and designed an interactive data visualization layout tracking outlet variances and metrics[cite: 2].",
-        scope: "8,523+ Retail Rows",
-        impact: "Monitored $18.6M Sales",
-        link: "https://github.com/sharmashreya80/blinkit-business-analysis",
-        img: "images/blinkit-dashboard.png" // Put your dashboard screenshot here
-    },
+  
     retail: {
         title: "Retail Performance Tracker",
         desc: "Built a functional analytical matrix manipulating raw structural attributes through Power Query and SQL filters to evaluate real-time profit returns[cite: 2].",
@@ -29,6 +22,14 @@ const projectData = {
         impact: "Dynamic Real-Time KPIs",
         link: "https://github.com/sharmashreya80/Sales-Performance-Tracker-",
         img: "images/retail-dashboard.png"
+    },
+      blinkit: {
+        title: "Blinkit Business Sales Analysis",
+        desc: "Cleaned and analyzed 8,523+ records using MySQL queries and designed an interactive data visualization layout tracking outlet variances and metrics[cite: 2].",
+        scope: "8,523+ Retail Rows",
+        impact: "Monitored $18.6M Sales",
+        link: "https://github.com/sharmashreya80/blinkit-business-analysis",
+        img: "images/blinkit-dashboard.png" // Put your dashboard screenshot here
     },
     global: {
         title: "Global Sales Analysis Dashboard",
@@ -52,7 +53,7 @@ function switchProject(key) {
     // 1. Update active styling in controls
     const cards = document.querySelectorAll('.control-card');
     cards.forEach(card => card.classList.remove('active'));
-    
+    document.getElementById('stage-link').href = target.link;
     // Find clicked card dynamically using the execution path
     event.currentTarget.classList.add('active');
 
